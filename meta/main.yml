@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Andrew Block
+  description: Downloads resources from the Red Hat customer portal
+  license: license (Apache)
+  min_ansible_version: 1.8
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  categories:
+  - development
+  - packaging
+  - system
+dependencies: []
+  
