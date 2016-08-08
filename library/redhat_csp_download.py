@@ -55,11 +55,10 @@ EXAMPLES = '''
     dest=/tmp/eap-connectors.zip
 
 '''
-
 def get_csp_file(module,username,password,url,dest):
 
     # Setup Auth Struct
-    auth = {'j_username': username, 'j_password': password}
+    auth = {'username': username, 'password': password}
 
     session = requests.Session()
 
@@ -72,16 +71,13 @@ def get_csp_file(module,username,password,url,dest):
     relaystate = root.xpath('//input[@name="RelayState"]')[0].value
     post_url = root.xpath('//form[@method="POST"]')[0].action
 
-    data = {'RelayState': relaystate, 'SAMLRequest': samlrequest, 'j_username': username, 'j_password': password}
+    data = {'RelayState': relaystate, 'SAMLRequest': samlrequest, 'username': username, 'password': password}
     r = session.post(post_url, data=data)
 
     root = lxml.html.fromstring(r.text)
     post_url = root.xpath('//form[@method="post"]')[0].action
 
-    # Format relative path
-    security_check_url = "{}{}".format(r.url,post_url)
-
-    r = session.post(security_check_url, data=data)
+    r = session.post(post_url, data=data)
 
     root = lxml.html.fromstring(r.text)
 
@@ -95,14 +91,14 @@ def get_csp_file(module,username,password,url,dest):
 
     relaystate = root.xpath('//input[@name="RelayState"]')[0].value
     post_url = root.xpath('//form[@method="POST"]')[0].action
-    data = {'RelayState': relaystate, 'SAMLResponse': samlresponse, 'j_username': username, 'j_password': password}
+    data = {'RelayState': relaystate, 'SAMLResponse': samlresponse, 'username': username, 'password': password}
 
     # Final Post to download file
     r = session.post(post_url, data=data)
-
     # Download file
     with open(dest, "wb") as code:
         code.write(r.content)
+
 
     # Close session
     session.close()
