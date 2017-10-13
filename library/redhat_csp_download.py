@@ -68,10 +68,9 @@ def get_csp_file(module,username,password,url,dest):
     # Parse initial response
     root = lxml.html.fromstring(r.text)
     samlrequest = root.xpath('//input[@name="SAMLRequest"]')[0].value
-    relaystate = root.xpath('//input[@name="RelayState"]')[0].value
     post_url = root.xpath('//form[@method="POST"]')[0].action
 
-    data = {'RelayState': relaystate, 'SAMLRequest': samlrequest, 'username': username, 'password': password}
+    data = {'SAMLRequest': samlrequest, 'username': username, 'password': password}
     r = session.post(post_url, data=data)
 
     root = lxml.html.fromstring(r.text)
@@ -89,9 +88,8 @@ def get_csp_file(module,username,password,url,dest):
 
     samlresponse = samlresponse[0].value
 
-    relaystate = root.xpath('//input[@name="RelayState"]')[0].value
     post_url = root.xpath('//form[@method="POST"]')[0].action
-    data = {'RelayState': relaystate, 'SAMLResponse': samlresponse, 'username': username, 'password': password}
+    data = {'SAMLResponse': samlresponse, 'username': username, 'password': password}
 
     # Final Post to download file
     r = session.post(post_url, data=data)
