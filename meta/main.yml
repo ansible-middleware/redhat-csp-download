@@ -8,13 +8,12 @@ galaxy_info:
   license: Apache License 2.0
   min_ansible_version: 2.2
   platforms:
-  - name: EL
-    versions:
-    - 6
-    - 7
+    - name: EL
+      versions:
+        - 6
+        - 7
   galaxy_tags:
-  - development
-  - packaging
-  - system
+    - development
+    - packaging
+    - system
 dependencies: []
-  
