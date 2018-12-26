@@ -74,9 +74,15 @@ def get_csp_file(module,username,password,url,dest):
 
     # Final Post to download file
     r = session.post(post_url, data=data)
-    # Download file
-    with open(dest, "wb") as code:
-        code.write(r.content)
+
+    # Check if html page is returned indicating failure
+    if 'html' not in r.headers['Content-Type']:
+
+        # Download file
+        with open(dest, "wb") as code:
+            code.write(r.content)
+    else:
+        module.fail_json(msg="An error occurred retrieving content")
 
     # Close session
     session.close()
