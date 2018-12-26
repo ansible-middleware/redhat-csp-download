@@ -6,4 +6,4 @@
         url: "{{ csp_url }}"
         dest: "{{ csp_download_dest }}"
         username: "{{ csp_username }}"
-        password: "{{ csp_password} }}"
+        password: "{{ csp_password }}"
