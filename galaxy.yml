@@ -1,0 +1,19 @@
+namespace: middleware_automation
+name: redhat_csp_download
+version: "1.1.0"
+readme: README.md
+authors:
+  - Andrew Block <ablock@redhat.com>
+  - Harsha Cherukuri <hcheruku@redhat.com>
+description: Downloads resources from the Red Hat Customer Portal.
+license_file: "LICENSE"
+tags:
+  - redhat
+  - rhel
+  - rhn
+  - subscription_manager
+dependencies: {}
+repository: https://github.com/ansible-middleware/redhat-csp-download
+documentation: https://github.com/ansible-middleware/redhat-csp-download
+homepage: https://github.com/ansible-middleware/redhat-csp-download
+issues: https://github.com/ansible-middleware/redhat-csp-download/issues
