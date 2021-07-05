@@ -1,0 +1,14 @@
+namespace: ansible-middleware
+name: redhat-csp-download
+version: 1.0
+readme: README.md
+authors:
+  - Andrew Block <ablock@redhat.com>
+description: Downloads resources from the Red Hat Customer Portal.
+license_file: "LICENSE"
+tags: {}
+dependencies: {}
+repository: https://github.com/ansible-middleware/redhat-csp-download
+documentation: https://github.com/ansible-middleware/redhat-csp-download
+homepage: https://github.com/ansible-middleware/redhat-csp-download
+issues: https://github.com/ansible-middleware/redhat-csp-download/issues
