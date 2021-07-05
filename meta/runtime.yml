@@ -1,7 +1,7 @@
 ---
 
 allow_duplicates: true
-
+requires_ansible: ">=2.9"
 galaxy_info:
   author: Andrew Block
   description: Downloads resources from the Red Hat customer portal
