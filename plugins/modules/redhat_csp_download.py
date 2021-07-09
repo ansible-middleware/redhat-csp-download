@@ -1,8 +1,56 @@
 #!/usr/bin/python
 
 # Written By - Andrew Block <andy.block@gmail.com>
-
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 ##############################################################################
+
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
+
+
+DOCUMENTATION = '''
+---
+module: redhat_csp_download
+author: Andrew Block (@sabre1041)
+version_added: "0.1"
+short_description: Downloads resources from the Red Hat customer portal.
+description:
+    - Downloads resources from the Red Hat customer portal.
+requirements:
+    - requests
+    - lxml
+options:
+    username:
+        description:
+            - Red Hat Customer Portal username.
+        type: str
+        required: true
+    password:
+        description:
+            - Red Hat Customer Portal username.
+        type: str
+        required: true
+    url:
+        description:
+            - Protected Red Hat Customer Portal resource.
+        type: str
+        required: true
+    dest:
+        description:
+            - absolute path of where to download the file to.
+        type: str
+        required: true
+'''
+
+EXAMPLES = '''
+- name: Download JBoss EAP Zip
+  redhat_csp_download:
+    username=foo@example.com
+    password=bar
+    url=https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=37193
+    dest=/tmp/eap-connectors.zip
+'''
+
 
 try:
     import requests
@@ -16,46 +64,8 @@ try:
 except ImportError:
     HAS_LXML = False
 
-DOCUMENTATION = '''
----
-module: redhat_csp_download
-author: "Andrew Block <andy.block@gmail.com>"
-version_added: "0.1"
-short_description: Downloads resources from the Red Hat customer portal.
-description:
-    - Downloads resources from the Red Hat customer portal.
-requirements:
-    - requests
-    - lxml
-options:
-    username:
-        description:
-            - Red Hat Customer Portal username.
-        required: true
-    password:
-        description:
-            - Red Hat Customer Portal username.
-        required: true
-    url:
-        description:
-            - Protected Red Hat Customer Portal resource.
-        required: true
-    dest:
-        description:
-            - absolute path of where to download the file to.
-        required: true
-'''
 
-EXAMPLES = '''
-- name: Download JBoss EAP Zip
-  redhat_csp_download:
-    username=foo@example.com
-    password=bar
-    url=https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=37193
-    dest=/tmp/eap-connectors.zip
-
-'''
-def get_csp_file(module,username,password,url,dest):
+def get_csp_file(module, username, password, url, dest):
 
     # Setup Auth Struct
     auth = {'username': username, 'password': password}
@@ -90,11 +100,11 @@ def get_csp_file(module,username,password,url,dest):
 
 def main():
     module = AnsibleModule(
-        argument_spec = dict(
-            username = dict(required=True),
-            password = dict(required=True),
-            url = dict(required=True),
-            dest = dict(required=True)
+        argument_spec=dict(
+            username=dict(required=True),
+            password=dict(required=True),
+            url=dict(required=True),
+            dest=dict(required=True)
         ),
         add_file_common_args=True
     )
@@ -122,19 +132,19 @@ def main():
         module.exit_json(msg="file already exists", dest=dest, url=url, changed=changed)
 
     try:
-        get_csp_file(module,username,password,url,dest)
+        get_csp_file(module, username, password, url, dest)
     except Exception as ex:
         module.fail_json(msg=str(ex))
 
     changed = True
 
     res_args = dict(
-        url = url, dest = dest, changed = changed, msg = "OK"
+        url=url, dest=dest, changed=changed, msg="OK"
     )
 
     module.exit_json(**res_args)
 
 
-from ansible.module_utils.basic import *
+from ansible.module_utils.basic import AnsibleModule, os
 if __name__ == '__main__':
     main()
