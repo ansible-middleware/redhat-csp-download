@@ -1,29 +1,43 @@
-redhat-csp-download
-=========
+# redhat_csp_download
 
-Downloads resources from the Red Hat Customer Portal.
+[![Build Status](https://github.com/ansible-middleware/redhat-csp-download/workflows/CI/badge.svg?branch=main)](https://github.com/ansible-middleware/redhat-csp-download/actions?workflow=CI)
 
-Requirements
-------------
-The lxml and requests packages are required. A full list of requirements is found in the metadata file
+Collection to download resources from the Red Hat Customer Portal.
 
-Examples
--------------
+## Included content
 
-    - name: Download JBoss EAP Zip
-      redhat_csp_download: 
-        username=foo@example.com
-        password=bar 
-        url=https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=37193
-        dest=/tmp/eap-connectors.zip
+Click on the name of a plugin or module to view that content's documentation:
 
-License
--------
+### Modules
+Name | Description
+--- | ---
+redhat_csp_download|Download resources from the Red Hat Customer Portal.
 
-[LICENSE](./LICENSE)
+### Roles
+Name | Description
+--- | ---
+redhat_csp_download|Installs necessary dependencies required by the redhat_csp_download module.
 
-Authors Information
-------------------
+## Installation and Usage
 
-* [Andrew Block] (https://github.com/sabre1041)
+### Installing the Collection from Ansible Galaxy
+
+Before using the collection, you need to install it with the Ansible Galaxy CLI:
+
+    ansible-galaxy collection install middleware_automation.redhat_csp_download
+
+You can also include it in a `requirements.yml` file and install it via `ansible-galaxy collection install -r requirements.yml`, using the format:
+
+```yaml
+---
+collections:
+  - name: middleware_automation.redhat_csp_download
+```
+
+## License
+
+Apache License v2.0 or later
+
+See [LICENCE](LICENSE) to view the full text.
+
 
