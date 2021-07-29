@@ -33,6 +33,9 @@ You can also include it in a `requirements.yml` file and install it via `ansible
 collections:
   - name: middleware_automation.redhat_csp_download
 ```
+### Using via GitHub Action
+A GitHub action which is uses this role is provided by the Red Hat Containers Community of Practice (CoP)
+- https://github.com/redhat-cop/github-actions/tree/master/redhat-csp-download
 
 ## License
 
