@@ -12,13 +12,15 @@ DOCUMENTATION = '''
 ---
 module: redhat_csp_download
 author: Andrew Block (@sabre1041)
-version_added: "0.1"
+version_added: "1.2.0"
 short_description: Downloads resources from the Red Hat customer portal.
 description:
     - Downloads resources from the Red Hat customer portal.
 requirements:
     - requests
     - lxml
+extends_documentation_fragment:
+    - files
 options:
     username:
         description:
@@ -41,6 +43,7 @@ options:
         type: str
         required: true
 '''
+
 
 EXAMPLES = '''
 - name: Download JBoss EAP Zip
@@ -102,7 +105,7 @@ def main():
     module = AnsibleModule(
         argument_spec=dict(
             username=dict(required=True),
-            password=dict(required=True),
+            password=dict(no_log=False, required=True),
             url=dict(required=True),
             dest=dict(required=True)
         ),
