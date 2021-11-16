@@ -1,8 +1,16 @@
-# redhat_csp_download
+# redhat_csp_download Collection for Ansible
 
 [![Build Status](https://github.com/ansible-middleware/redhat-csp-download/workflows/CI/badge.svg?branch=main)](https://github.com/ansible-middleware/redhat-csp-download/actions?workflow=CI)
 
 Collection to download resources from the Red Hat Customer Portal.
+
+<!--start requires_ansible-->
+## Ansible version compatibility
+
+This collection has been tested against following Ansible versions: **>=2.9.10**.
+
+Plugins and modules within a collection may be tested with only specific Ansible versions. A collection may contain metadata that identifies these versions.
+<!--end requires_ansible-->
 
 ## Included content
 
