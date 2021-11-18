@@ -33,6 +33,7 @@ jobs:
           body: "Release ${{ steps.get_version.outputs.TAG_VERSION }}"
       - name: Publish collection
         env:
-          ANSIBLE_GALAXY_API_KEY: ${{ secrets.ANSIBLE_GALAXY_API_KEY }}
+          SERVER_URL: ${{ secrets.SERVER_URL }}
+          HUB_TOKEN: ${{ secrets.HUB_TOKEN}}
         run: |
-          ansible-galaxy collection publish *.tar.gz --api-key $ANSIBLE_GALAXY_API_KEY
+          ansible-galaxy collection publish *.tar.gz --server $SERVER_URL --api-key $HUB_TOKEN
