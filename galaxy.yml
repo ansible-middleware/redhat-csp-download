@@ -1,4 +1,4 @@
-namespace: middleware_automation
+namespace: redhat
 name: redhat_csp_download
 version: "1.2.0"
 readme: README.md
