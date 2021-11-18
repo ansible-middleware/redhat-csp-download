@@ -32,18 +32,22 @@ redhat_csp_download|Installs necessary dependencies required by the redhat_csp_d
 
 Before using the collection, you need to install it with the Ansible Galaxy CLI:
 
-    ansible-galaxy collection install middleware_automation.redhat_csp_download
+    ansible-galaxy collection install redhat.redhat_csp_download
 
 You can also include it in a `requirements.yml` file and install it via `ansible-galaxy collection install -r requirements.yml`, using the format:
 
 ```yaml
 ---
 collections:
-  - name: middleware_automation.redhat_csp_download
+  - name: redhat.redhat_csp_download
 ```
 ### Using via GitHub Action
 A GitHub action which is uses this role is provided by the Red Hat Containers Community of Practice (CoP)
 - https://github.com/redhat-cop/github-actions/tree/master/redhat-csp-download
+
+## Support
+
+redhat_csp_download collection v1.2.0 is a Beta release and for [Technical Preview](https://access.redhat.com/support/offerings/techpreview). If you have any issues or questions related to collection, please don't hesitate to contact us on <Ansible-middleware-core@redhat.com> or open an issue on https://github.com/ansible-middleware/redhat-csp-download/issues
 
 ## License
 
