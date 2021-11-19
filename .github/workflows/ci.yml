@@ -3,15 +3,12 @@ name: CI
 "on":
   push:
     branches:
-      - main
+      - downstream
   pull_request:
 
 jobs:
   ci:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    env:
-      namespace: redhat
     strategy:
       matrix:
         python_version: ["3.9"]
@@ -19,7 +16,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with:
-          path: ansible_collections/${{ env.namespace}}/redhat_csp_download
+          path: ansible_collections/redhat/redhat_csp_download
 
       - name: Set up Python ${{ matrix.python_version }}
         uses: actions/setup-python@v1
@@ -34,8 +31,8 @@ jobs:
       - name: Create default collection path symlink
         run: |
           mkdir -p /home/runner/.ansible
-          ln -s /home/runner/work/${{ env.namespace}}/redhat_csp_download /home/runner/.ansible/collections
+          ln -s /home/runner/work/redhat/redhat_csp_download /home/runner/.ansible/collections
 
       - name: Run sanity tests
         run: ansible-test sanity --docker -v --color --python ${{ matrix.python_version }}
-        working-directory: ./ansible_collections/${{ env.namespace}}/redhat_csp_download
+        working-directory: ./ansible_collections/redhat/redhat_csp_download
