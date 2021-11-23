@@ -42,7 +42,7 @@
   ansible.builtin.include_tasks: fastpackage.yml
   vars:
     package_name: "{{ item }}"
-  loop:
+  with_items:
     - "{{ distro_packages }}"
   when:
     - distro_packages is defined
