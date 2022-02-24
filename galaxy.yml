@@ -12,6 +12,8 @@ tags:
   - rhel
   - rhn
   - subscription_manager
+  - application
+  - tools
 dependencies: {}
 repository: https://github.com/ansible-middleware/redhat-csp-download
 documentation: https://github.com/ansible-middleware/redhat-csp-download
