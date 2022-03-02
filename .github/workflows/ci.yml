@@ -1,6 +1,6 @@
 ---
 name: CI
-"on":
+on:
   push:
     branches:
       - main
@@ -26,7 +26,13 @@ jobs:
       - name: Install yamllint and ansible
         run: |
           python -m pip install --upgrade pip
-          pip install yamllint ansible-core
+          pip install yamllint ansible-core ansible-lint
+
+      - name: Install ansible-lint custom rules
+        uses: actions/checkout@v2
+        with:
+          repository: ansible-middleware/ansible-lint-custom-rules
+          path: ansible_collections/ansible-lint-custom-rules/
 
       - name: Create default collection path symlink
         run: |
@@ -35,4 +41,8 @@ jobs:
 
       - name: Run sanity tests
         run: ansible-test sanity --docker -v --color --python ${{ matrix.python_version }}
+        working-directory: ./ansible_collections/middleware_automation/redhat_csp_download
+
+      - name: Run ansible-lint
+        run: ansible-lint
         working-directory: ./ansible_collections/middleware_automation/redhat_csp_download
