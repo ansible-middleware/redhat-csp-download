@@ -48,6 +48,7 @@ jobs:
       - name: Create doc directories and resources
         run: |
           mkdir -p ./docs/plugins ./docs/roles
+          chmod 750 docs/plugins/
           cat ./docs/roles.rst.template > ./docs/roles/index.rst
           for role_readme in roles/*/README.md; do ln -f -s ../../$role_readme ./docs/roles/$(basename $(dirname $role_readme)).md; echo " * :doc:\`$(basename $(dirname $role_readme))\`" >> ./docs/roles/index.rst; done
           antsibull-docs collection --use-current --squash-hierarchy --dest-dir docs/plugins  middleware_automation.redhat_csp_download
