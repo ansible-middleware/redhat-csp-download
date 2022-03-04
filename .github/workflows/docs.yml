@@ -15,7 +15,7 @@ env:
 jobs:
   docs:
     runs-on: ubuntu-latest
-    if: github.repository == 'ansible-middleware/redhat_csp_download'
+    if: github.repository == 'ansible-middleware/redhat-csp-download'
     permissions:
       actions: write
       checks: write
