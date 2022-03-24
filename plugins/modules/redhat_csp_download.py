@@ -70,9 +70,6 @@ except ImportError:
 
 def get_csp_file(module, username, password, url, dest):
 
-    # Setup Auth Struct
-    auth = {'username': username, 'password': password}
-
     session = requests.Session()
 
     # Get initial request
@@ -83,6 +80,7 @@ def get_csp_file(module, username, password, url, dest):
 
     post_url = root.xpath('//form[@method="post"]')[0].action
 
+    # Setup Auth Struct
     data = {'username': username, 'password': password}
 
     # Final Post to download file
