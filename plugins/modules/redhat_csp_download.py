@@ -25,13 +25,15 @@ options:
     username:
         description:
             - Red Hat Customer Portal username.
+            - If value not set, will try environment variable C(REDHAT_CSP_USERNAME)
         type: str
-        required: true
+        required: false
     password:
         description:
             - Red Hat Customer Portal username.
+            - If value not set, will try environment variable C(REDHAT_CSP_PASSWORD)
         type: str
-        required: true
+        required: false
     url:
         description:
             - Protected Red Hat Customer Portal resource.
@@ -102,8 +104,8 @@ def get_csp_file(module, username, password, url, dest):
 def main():
     module = AnsibleModule(
         argument_spec=dict(
-            username=dict(required=True),
-            password=dict(no_log=True, required=True),
+            username=dict(required=False),
+            password=dict(no_log=True, required=False),
             url=dict(required=True),
             dest=dict(required=True)
         ),
@@ -120,6 +122,18 @@ def main():
     password = module.params.get('password')
     url = module.params.get('url')
     dest = module.params.get('dest')
+
+    if not username:
+        username = os.environ.get('REDHAT_CSP_USERNAME')
+
+    if not username:
+        module.fail_json(msg=str("username not specified and unable to determine username from 'REDHAT_CSP_USERNAME' environment variable."))
+
+    if not password:
+        password = os.environ.get('REDHAT_CSP_PASSWORD')
+
+    if not password:
+        module.fail_json(msg=str("password not specified and unable to determine username from 'REDHAT_CSP_PASSWORD' environment variable."))
 
     if os.path.exists(dest):
         # allow file attribute changes
