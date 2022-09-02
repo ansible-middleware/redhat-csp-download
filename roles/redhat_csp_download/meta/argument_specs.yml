@@ -1,0 +1,10 @@
+---
+argument_specs:
+    main:
+        options:
+            redhat_csp_download:
+                type: "dict"
+                required: False
+                description: "Internal mapping of dependencies by distribution"
+    downstream:
+        options:

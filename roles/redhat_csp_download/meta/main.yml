@@ -1,0 +1,27 @@
+---
+galaxy_info:
+  role_name: redhat_csp_download
+  namespace: middleware_automation
+  author: Andrew Block
+  description: Installs dependencies needed by the redhat_csp_download module.
+  company: Red Hat, Inc.
+
+  license: Apache License 2.0
+
+  min_ansible_version: "2.9"
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+
+  galaxy_tags:
+    - redhat
+    - rhel
+    - rhn
+    - subscription_manager
+    - application
+    - tools    
+    - infrastructure
+    - middleware

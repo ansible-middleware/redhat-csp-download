@@ -25,6 +25,7 @@ warn_list:
   - fqcn-builtins
   - no-log-password
   - task_has_valid_name
+  - jinja[spacing]
 
 skip_list:
   - file_is_small_enough
