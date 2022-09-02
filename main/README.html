@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -61,6 +62,16 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="developing.html">Contributor’s Guidelines</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Middleware collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/infinispan/">Infinispan / Red Hat Data Grid</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/keycloak/">Keycloak / Red Hat Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/wildfly/">Wildfly / Red Hat JBoss EAP</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/jws/">Tomcat / Red Hat JWS</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/amq/">ActiveMQ / Red Hat AMQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/redhat-csp-download/">Red Hat CSP Download</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/ansible_collections_jcliff/">JCliff</a></li>
+</ul>
 
         </div>
       </div>
@@ -87,21 +98,21 @@
            <div itemprop="articleBody">
              
   <section id="redhat-csp-download-collection-for-ansible">
-<h1>redhat_csp_download Collection for Ansible<a class="headerlink" href="#redhat-csp-download-collection-for-ansible" title="Permalink to this headline"></a></h1>
+<h1>redhat_csp_download Collection for Ansible<a class="headerlink" href="#redhat-csp-download-collection-for-ansible" title="Permalink to this heading"></a></h1>
 <p><a class="reference external" href="https://github.com/ansible-middleware/redhat-csp-download/actions?workflow=CI"><img alt="Build Status" src="https://github.com/ansible-middleware/redhat-csp-download/workflows/CI/badge.svg?branch=main" /></a></p>
 <p>Collection to download resources from the Red Hat Customer Portal.</p>
 <!--start requires_ansible-->
 <section id="ansible-version-compatibility">
-<h2>Ansible version compatibility<a class="headerlink" href="#ansible-version-compatibility" title="Permalink to this headline"></a></h2>
+<h2>Ansible version compatibility<a class="headerlink" href="#ansible-version-compatibility" title="Permalink to this heading"></a></h2>
 <p>This collection has been tested against following Ansible versions: <strong>&gt;=2.9.10</strong>.</p>
 <p>Plugins and modules within a collection may be tested with only specific Ansible versions. A collection may contain metadata that identifies these versions.</p>
 <!--end requires_ansible-->
 </section>
 <section id="included-content">
-<h2>Included content<a class="headerlink" href="#included-content" title="Permalink to this headline"></a></h2>
+<h2>Included content<a class="headerlink" href="#included-content" title="Permalink to this heading"></a></h2>
 <p>Click on the name of a plugin or module to view that content’s documentation:</p>
 <section id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this heading"></a></h3>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -116,7 +127,7 @@
 </table>
 </section>
 <section id="roles">
-<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline"></a></h3>
+<h3>Roles<a class="headerlink" href="#roles" title="Permalink to this heading"></a></h3>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -132,9 +143,9 @@
 </section>
 </section>
 <section id="installation-and-usage">
-<h2>Installation and Usage<a class="headerlink" href="#installation-and-usage" title="Permalink to this headline"></a></h2>
+<h2>Installation and Usage<a class="headerlink" href="#installation-and-usage" title="Permalink to this heading"></a></h2>
 <section id="installing-the-collection-from-ansible-galaxy">
-<h3>Installing the Collection from Ansible Galaxy<a class="headerlink" href="#installing-the-collection-from-ansible-galaxy" title="Permalink to this headline"></a></h3>
+<h3>Installing the Collection from Ansible Galaxy<a class="headerlink" href="#installing-the-collection-from-ansible-galaxy" title="Permalink to this heading"></a></h3>
 <p>Before using the collection, you need to install it with the Ansible Galaxy CLI:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ansible-galaxy collection install middleware_automation.redhat_csp_download
 </pre></div>
@@ -147,7 +158,7 @@
 </div>
 </section>
 <section id="using-via-github-action">
-<h3>Using via GitHub Action<a class="headerlink" href="#using-via-github-action" title="Permalink to this headline"></a></h3>
+<h3>Using via GitHub Action<a class="headerlink" href="#using-via-github-action" title="Permalink to this heading"></a></h3>
 <p>A GitHub action which is uses this role is provided by the Red Hat Containers Community of Practice (CoP)</p>
 <ul class="simple">
 <li><p>https://github.com/redhat-cop/github-actions/tree/master/redhat-csp-download</p></li>
@@ -155,7 +166,7 @@
 </section>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline"></a></h2>
+<h2>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h2>
 <p>Apache License v2.0 or later</p>
 <p>See <span class="xref myst">LICENCE</span> to view the full text.</p>
 </section>

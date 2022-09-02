@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -45,6 +46,16 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../developing.html">Contributor’s Guidelines</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Middleware collections</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/infinispan/">Infinispan / Red Hat Data Grid</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/keycloak/">Keycloak / Red Hat Single Sign-On</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/wildfly/">Wildfly / Red Hat JBoss EAP</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/jws/">Tomcat / Red Hat JWS</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/amq/">ActiveMQ / Red Hat AMQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/redhat-csp-download/">Red Hat CSP Download</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ansible-middleware.github.io/ansible_collections_jcliff/">JCliff</a></li>
+</ul>
 
         </div>
       </div>
@@ -71,14 +82,14 @@
            <div itemprop="articleBody">
              
   <section id="redhat-csp-download">
-<h1>redhat-csp-download<a class="headerlink" href="#redhat-csp-download" title="Permalink to this headline"></a></h1>
+<h1>redhat-csp-download<a class="headerlink" href="#redhat-csp-download" title="Permalink to this heading"></a></h1>
 <p>Downloads resources from the Red Hat Customer Portal.</p>
 <section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The lxml and requests packages are required. A full list of requirements is found in the metadata file</p>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- name: Download JBoss EAP Zip
   redhat_csp_download: 
     username=foo@example.com
@@ -89,7 +100,7 @@
 </div>
 </section>
 <section id="authors-information">
-<h2>Authors Information<a class="headerlink" href="#authors-information" title="Permalink to this headline"></a></h2>
+<h2>Authors Information<a class="headerlink" href="#authors-information" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/sabre1041">Andrew Block</a></p></li>
 </ul>
