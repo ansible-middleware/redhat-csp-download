@@ -2,4 +2,4 @@ Role Index
 ==========
 
 .. toctree::
- * :doc:`redhat_csp_download`
+    redhat_csp_download

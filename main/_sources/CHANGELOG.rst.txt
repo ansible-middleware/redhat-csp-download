@@ -1,0 +1,10 @@
+=======================================================
+middleware_automation.redhat_csp_download Release Notes
+=======================================================
+
+.. contents:: Topics
+
+This changelog describes changes after version 1.2.2.
+
+v1.2.3-devel
+============
