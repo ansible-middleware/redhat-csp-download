@@ -20,7 +20,7 @@ galaxy_info:
     - redhat
     - rhel
     - rhn
-    - subscription_manager
+    - subscriptionmanager
     - application
     - tools    
     - infrastructure

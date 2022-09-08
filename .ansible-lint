@@ -15,10 +15,13 @@ enable_list:
   - fqcn-builtins  # opt-in
   - no-log-password  # opt-in
 
+skip_list:
+  - file_is_small_enough
+  - vars_should_not_be_used
+
 warn_list:
   - role_vars_start_with_role_name
   - vars_in_vars_files_have_valid_names
-  - vars_should_not_be_used
   - experimental
   - ignore-errors
   - no-handler
@@ -26,6 +29,7 @@ warn_list:
   - no-log-password
   - task_has_valid_name
   - jinja[spacing]
+  - schema
 
 skip_list:
   - file_is_small_enough

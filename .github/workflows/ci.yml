@@ -6,6 +6,11 @@ on:
       - main
   pull_request:
 
+env:
+  COLORTERM: 'yes'
+  TERM: 'xterm-256color'
+  PYTEST_ADDOPTS: '--color=yes'
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -27,6 +32,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install yamllint ansible-core ansible-lint
+          pip install -r ansible_collections/middleware_automation/redhat_csp_download/requirements.txt
 
       - name: Install ansible-lint custom rules
         uses: actions/checkout@v2
@@ -40,9 +46,12 @@ jobs:
           ln -s /home/runner/work/middleware_automation/redhat_csp_download /home/runner/.ansible/collections
 
       - name: Run sanity tests
-        run: ansible-test sanity --docker -v --color --python ${{ matrix.python_version }}
+        run: ansible-test sanity --docker -v --color --python ${{ matrix.python_version }} --exclude changelogs/fragments/.gitignore
         working-directory: ./ansible_collections/middleware_automation/redhat_csp_download
 
       - name: Run ansible-lint
         run: ansible-lint
         working-directory: ./ansible_collections/middleware_automation/redhat_csp_download
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
