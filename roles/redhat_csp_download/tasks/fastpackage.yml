@@ -5,7 +5,8 @@
       - package_name is defined
     quiet: true
 
-- block:
+- name: "Check if package is installed and install if needed"
+  block:
     - name: "Test if package {{ package_name }} is already installed"
       ansible.builtin.command: rpm -q {{ package_name }}
       args:
@@ -13,7 +14,7 @@
       register: rpm_info
       changed_when: rpm_info.failed
   rescue:
-    - name: "If package {{ package_name }} is missing, install package using yum."
+    - name: "Install package {{ package_name }} if missing"
       ansible.builtin.yum:
         name: "{{ package_name }}"
         state: installed

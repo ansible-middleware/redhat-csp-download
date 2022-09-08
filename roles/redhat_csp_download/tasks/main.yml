@@ -11,7 +11,8 @@
       - ansible_distribution == 'RedHat'
     quiet: true
 
-- block:
+- name: Setup python 2/3 facts
+  block:
     - name: Setup python facts
       ansible.builtin.set_fact:
         python_deps: "{{ redhat_csp_download.dependencies.python2 }}"
@@ -28,7 +29,8 @@
     - ansible_python.version is defined
     - ansible_python.version.major is defined
 
-- block:
+- name: "Setup python facts per distro"
+  block:
     - name: Setup python facts
       ansible.builtin.set_fact:
         distro_packages: "{{ python_deps.rhel8 }}"

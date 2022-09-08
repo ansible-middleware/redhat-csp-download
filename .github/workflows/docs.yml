@@ -51,7 +51,7 @@ jobs:
         uses: ansible-middleware/collection-docs-action@main
         with:
           collection_fqcn: middleware_automation.redhat_csp_download
-          collection_repo: ansible-middleware/redhat_csp_download
+          collection_repo: ansible-middleware/redhat-csp-download
           dependencies: false
           commit_changelog: false
           commit_ghpages: true

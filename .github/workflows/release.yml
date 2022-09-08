@@ -6,7 +6,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.repository == 'ansible-middleware/redhat_csp_download'
+    if: github.repository == 'ansible-middleware/redhat-csp-download'
     permissions:
       actions: write
       checks: write
@@ -57,7 +57,7 @@ jobs:
         uses: ansible-middleware/collection-docs-action@main
         with:
           collection_fqcn: middleware_automation.redhat_csp_download
-          collection_repo: ansible-middleware/redhat_csp_download
+          collection_repo: ansible-middleware/redhat-csp-download
           dependencies: false
           commit_changelog: true
           commit_ghpages: false
