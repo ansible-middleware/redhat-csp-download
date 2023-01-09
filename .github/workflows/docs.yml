@@ -46,7 +46,7 @@ jobs:
       - name: Create default collection path
         run: |
           mkdir -p /home/runner/.ansible
-          ln -s /home/runner/work/middleware_automation/redhat_csp_download /home/runner/.ansible/collections
+          ln -s /home/runner/work/redhat_csp_download/redhat_csp_download /home/runner/.ansible/collections
 
       - name: Create changelog and documentation
         uses: ansible-middleware/collection-docs-action@main
